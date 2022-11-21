@@ -14,6 +14,8 @@ public class RippleViewModel: ObservableObject {
     fileprivate var touchMove: ((_ touchPoint: CGPoint) -> Void)?
     fileprivate var touchUp: ((_ touchPoint: CGPoint) -> Void)?
     fileprivate var isTouchHandling = false
+    
+    public init() { }
 }
 
 public enum RippleViewGestureState {
