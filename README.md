@@ -1,2 +1,3 @@
-# SwiftUIRipple
-Ripple effect on SwiftUI
+# SwiftUIRippleEffect
+
+A description of this package.
