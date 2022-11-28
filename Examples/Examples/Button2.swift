@@ -24,9 +24,10 @@ extension Button2 {
                 .background(
                     Capsule()
                         .foregroundColor(.yellow)
-                        .addRipple(color: .blue,
-                                   rippleViewModel: rippleViewModel,
-                                   clipShape: Capsule())
+                        .rippleEffect(color: .blue,
+                                      maxScale: 1.0,
+                                      viewModel: rippleViewModel,
+                                      clipShape: Capsule())
                 )
         }
     }

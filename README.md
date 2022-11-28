@@ -44,9 +44,10 @@ var button1: some View {
         .background(
             Capsule()
                 .foregroundColor(.yellow)
-                .addRipple(color: .gray,
-                           rippleViewModel: rippleViewModel,
-                           clipShape: Capsule()) // 3
+                .rippleEffect(color: .gray,
+                              maxScale: 0.9,
+                              viewModel: rippleViewModel,
+                              clipShape: Capsule()) // 3
         )
     }.padding()
 }

@@ -1,20 +1,11 @@
 {
   "pins" : [
     {
-      "identity" : "swiftuirippleeffect",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Jnis/SwiftUIRippleEffect.git",
-      "state" : {
-        "branch" : "main",
-        "revision" : "66160818410e6e92f27c1be9f2584ac1ed76a6e8"
-      }
-    },
-    {
       "identity" : "viewontouch",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Jnis/ViewOnTouch.git",
       "state" : {
-        "revision" : "1301fe4ac980cffd181ec3e4e612698ac48f88e3",
+        "revision" : "1e685f730dd7895be7bc64544bd382e8ba0f62a0",
         "version" : "1.0.0"
       }
     }

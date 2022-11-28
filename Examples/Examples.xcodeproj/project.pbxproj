@@ -11,9 +11,9 @@
 		09150C45292C101A00D20EDD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09150C44292C101A00D20EDD /* ContentView.swift */; };
 		09150C47292C101B00D20EDD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09150C46292C101B00D20EDD /* Assets.xcassets */; };
 		09150C4B292C101B00D20EDD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09150C4A292C101B00D20EDD /* Preview Assets.xcassets */; };
-		09150C53292C107700D20EDD /* SwiftUIRippleEffect in Frameworks */ = {isa = PBXBuildFile; productRef = 09150C52292C107700D20EDD /* SwiftUIRippleEffect */; };
 		09150C57292C10C200D20EDD /* Button2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09150C56292C10C200D20EDD /* Button2.swift */; };
 		091AC6BB292C1A4400991273 /* Button3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091AC6BA292C1A4400991273 /* Button3.swift */; };
+		0EA9EF8629350C0E007996F1 /* SwiftUIRippleEffect in Frameworks */ = {isa = PBXBuildFile; productRef = 0EA9EF8529350C0E007996F1 /* SwiftUIRippleEffect */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +25,7 @@
 		09150C4A292C101B00D20EDD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		09150C56292C10C200D20EDD /* Button2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button2.swift; sourceTree = "<group>"; };
 		091AC6BA292C1A4400991273 /* Button3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button3.swift; sourceTree = "<group>"; };
+		0EA9EF8329350BDB007996F1 /* SwiftUIRippleEffect */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SwiftUIRippleEffect; path = ..; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,7 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09150C53292C107700D20EDD /* SwiftUIRippleEffect in Frameworks */,
+				0EA9EF8629350C0E007996F1 /* SwiftUIRippleEffect in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,7 +44,9 @@
 			isa = PBXGroup;
 			children = (
 				09150C41292C101A00D20EDD /* Examples */,
+				0EA9EF8229350BDB007996F1 /* Packages */,
 				09150C40292C101A00D20EDD /* Products */,
+				0EA9EF8429350C0E007996F1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,6 +80,21 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		0EA9EF8229350BDB007996F1 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				0EA9EF8329350BDB007996F1 /* SwiftUIRippleEffect */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		0EA9EF8429350C0E007996F1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -94,7 +112,7 @@
 			);
 			name = Examples;
 			packageProductDependencies = (
-				09150C52292C107700D20EDD /* SwiftUIRippleEffect */,
+				0EA9EF8529350C0E007996F1 /* SwiftUIRippleEffect */,
 			);
 			productName = Examples;
 			productReference = 09150C3F292C101A00D20EDD /* Examples.app */;
@@ -125,7 +143,6 @@
 			);
 			mainGroup = 09150C36292C101A00D20EDD;
 			packageReferences = (
-				09150C51292C107700D20EDD /* XCRemoteSwiftPackageReference "SwiftUIRippleEffect" */,
 			);
 			productRefGroup = 09150C40292C101A00D20EDD /* Products */;
 			projectDirPath = "";
@@ -369,21 +386,9 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		09150C51292C107700D20EDD /* XCRemoteSwiftPackageReference "SwiftUIRippleEffect" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Jnis/SwiftUIRippleEffect.git";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
 /* Begin XCSwiftPackageProductDependency section */
-		09150C52292C107700D20EDD /* SwiftUIRippleEffect */ = {
+		0EA9EF8529350C0E007996F1 /* SwiftUIRippleEffect */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 09150C51292C107700D20EDD /* XCRemoteSwiftPackageReference "SwiftUIRippleEffect" */;
 			productName = SwiftUIRippleEffect;
 		};
 /* End XCSwiftPackageProductDependency section */
