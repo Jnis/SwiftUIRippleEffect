@@ -18,7 +18,7 @@ public extension View {
     func addRipple<S>(color: Color, rippleViewModel: RippleViewModel, clipShape: S) -> some View where S : Shape {
         self
             .overlay(content: {
-                RippleView(rippleViewModel: rippleViewModel, color: UIColor(color))
+                SwiftUIRippleView(rippleViewModel: rippleViewModel, color: UIColor(color))
                     .clipShape(clipShape)
             })
     }
@@ -57,7 +57,7 @@ public extension View {
     }
 }
 
-struct RippleView: UIViewRepresentable {
+struct SwiftUIRippleView: UIViewRepresentable {
     let rippleViewModel: RippleViewModel
     let color: UIColor
     
@@ -72,7 +72,7 @@ struct RippleView: UIViewRepresentable {
     }
 }
 
-extension RippleView {
+extension SwiftUIRippleView {
     class RippleViewUIView: UIView {
         
         var rippleColor: UIColor = .clear {

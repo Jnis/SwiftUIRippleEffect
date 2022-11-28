@@ -16,7 +16,7 @@ struct RippleViewModifier: ViewModifier {
         content
             .overlay(
                 AnyView(
-                    RippleView(rippleViewModel: viewModel, color: UIColor(color))
+                    SwiftUIRippleView(rippleViewModel: viewModel, color: UIColor(color))
                         .clipShape(clipShape)
                 )
             )
