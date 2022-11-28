@@ -25,9 +25,9 @@ extension Button3 {
                 uiModel.bgColor.cornerRadius(12)
                 
                 Color.clear
-                    .addRipple(color: uiModel.rippleColor,
-                               rippleViewModel: rippleViewModel,
-                               clipShape: RoundedRectangle(cornerRadius: 12))
+                    .rippleEffect(color: uiModel.rippleColor,
+                                  viewModel: rippleViewModel,
+                                  clipShape: RoundedRectangle(cornerRadius: 12))
                 
                 VStack(spacing: 7) {
                     ZStack {

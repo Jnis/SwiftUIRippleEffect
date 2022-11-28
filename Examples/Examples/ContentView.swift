@@ -63,9 +63,9 @@ struct ContentView: View {
             .background(
                 Capsule()
                     .foregroundColor(.yellow)
-                    .addRipple(color: .gray,
-                               rippleViewModel: rippleViewModel,
-                               clipShape: Capsule()) // 3
+                    .rippleEffect(color: .gray,
+                                  viewModel: rippleViewModel,
+                                  clipShape: Capsule()) // 3
             )
         }.padding()
     }
