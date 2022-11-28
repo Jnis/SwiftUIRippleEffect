@@ -30,25 +30,27 @@ extension View {
         self
             .onTouch(type: longGestureAction == nil ? .allWithoutLongGesture : .all,
                      perform: { location, event in
-//                print("\(location) - \(event.rawValue)")
-                if event == .started {
+                switch event {
+                case .started:
                     viewModel.isTouchHandling = true
                     viewModel.touchDown?(location)
-                } else if event == .moved {
+                case .moved:
                     viewModel.touchMove?(location)
-                } else if event == .ended {
+                case .ended:
                     viewModel.isTouchHandling = false
                     viewModel.touchUp?(location)
-                } else if event == .tapGesture && !viewModel.isTouchHandling {
+                case .tapGesture where !viewModel.isTouchHandling:
                     viewModel.touchDown?(location)
                     viewModel.touchUp?(location)
                     tapAction?()
-                } else if event == .longGestureStarted {
+                case .longGestureStarted:
                     longGestureAction?(location, .started)
-                } else if event == .longGestureMoved {
+                case .longGestureMoved:
                     longGestureAction?(location, .moved)
-                } else if event == .longGestureEnded {
+                case .longGestureEnded:
                     longGestureAction?(location, .ended)
+                default:
+                    break
                 }
             })
     }
