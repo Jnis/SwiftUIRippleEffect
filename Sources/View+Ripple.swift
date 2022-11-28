@@ -10,6 +10,11 @@ import SwiftUI
 import ViewOnTouch
 
 extension View {
+    public func rippleEffect(color: Color, viewModel: RippleViewModel, clipShape: any Shape) -> some View {
+        modifier(RippleViewModifier(color: color, viewModel: viewModel, clipShape: clipShape))
+    }
+    
+    @available(*, deprecated, renamed: "rippleEffect")
     public func addRipple<S>(color: Color, rippleViewModel: RippleViewModel, clipShape: S) -> some View where S : Shape {
         self
             .overlay(content: {
