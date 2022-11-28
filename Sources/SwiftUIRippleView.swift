@@ -11,21 +11,23 @@ import UIKit
 struct SwiftUIRippleView: UIViewRepresentable {
     let rippleViewModel: RippleViewModel
     let color: UIColor
+    let maxScale: CGFloat?
     
     func makeUIView(context: Context) -> RippleViewUIView {
         let view = RippleViewUIView()
         view.rippleColor = self.color
         view.rippleViewModel = rippleViewModel
+        if let scale = maxScale {
+            view.maxRippleScale = scale
+        }
         return view
     }
     
-    func updateUIView(_ uiView: RippleViewUIView, context: Context) {
-    }
+    func updateUIView(_ uiView: RippleViewUIView, context: Context) {}
 }
 
 extension SwiftUIRippleView {
     class RippleViewUIView: UIView {
-        
         var rippleColor: UIColor = .clear {
             didSet {
                 maskLayer.fillColor = rippleColor.cgColor
@@ -51,6 +53,8 @@ extension SwiftUIRippleView {
             }
         }
         
+        var maxRippleScale: CGFloat = 0.7
+        
         private var maxRippleR: CGFloat {
             return max(self.bounds.size.width, self.bounds.size.height)
         }
@@ -66,7 +70,7 @@ extension SwiftUIRippleView {
         
         private func updateCenter(touchPoint: CGPoint) {
             self.containerView.center = touchPoint
-            let scale: CGFloat = rippleR(touchPoint: touchPoint) / maxRippleR * 0.7
+            let scale: CGFloat = rippleR(touchPoint: touchPoint) / maxRippleR * maxRippleScale
             self.containerView.transform = .init(scaleX: scale, y: scale)
         }
         

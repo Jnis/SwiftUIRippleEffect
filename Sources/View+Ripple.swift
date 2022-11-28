@@ -10,15 +10,21 @@ import SwiftUI
 import ViewOnTouch
 
 public extension View {
-    func rippleEffect(color: Color, viewModel: RippleViewModel, clipShape: any Shape) -> some View {
-        modifier(RippleViewModifier(color: color, viewModel: viewModel, clipShape: clipShape))
+    func rippleEffect(color: Color,
+                      maxScale: CGFloat? = nil,
+                      viewModel: RippleViewModel,
+                      clipShape: any Shape) -> some View {
+        modifier(RippleViewModifier(color: color, maxScale: maxScale, viewModel: viewModel, clipShape: clipShape))
     }
     
     @available(iOS, introduced: 15.0, deprecated: 16.0, renamed: "rippleEffect")
-    func addRipple<S>(color: Color, rippleViewModel: RippleViewModel, clipShape: S) -> some View where S : Shape {
+    func addRipple<S>(color: Color,
+                      maxScale: CGFloat? = nil,
+                      rippleViewModel: RippleViewModel,
+                      clipShape: S) -> some View where S : Shape {
         self
             .overlay(content: {
-                SwiftUIRippleView(rippleViewModel: rippleViewModel, color: UIColor(color))
+                SwiftUIRippleView(rippleViewModel: rippleViewModel, color: UIColor(color), maxScale: maxScale)
                     .clipShape(clipShape)
             })
     }

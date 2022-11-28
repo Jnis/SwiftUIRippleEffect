@@ -25,6 +25,7 @@ extension Button2 {
                     Capsule()
                         .foregroundColor(.yellow)
                         .rippleEffect(color: .blue,
+                                      maxScale: 1.0,
                                       viewModel: rippleViewModel,
                                       clipShape: Capsule())
                 )
