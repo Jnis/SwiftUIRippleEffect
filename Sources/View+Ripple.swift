@@ -9,24 +9,25 @@ import Foundation
 import SwiftUI
 import ViewOnTouch
 
-extension View {
-    public func rippleEffect(color: Color, viewModel: RippleViewModel, clipShape: any Shape) -> some View {
+public extension View {
+    func rippleEffect(color: Color, viewModel: RippleViewModel, clipShape: any Shape) -> some View {
         modifier(RippleViewModifier(color: color, viewModel: viewModel, clipShape: clipShape))
     }
     
     @available(*, deprecated, renamed: "rippleEffect")
-    public func addRipple<S>(color: Color, rippleViewModel: RippleViewModel, clipShape: S) -> some View where S : Shape {
+    func addRipple<S>(color: Color, rippleViewModel: RippleViewModel, clipShape: S) -> some View where S : Shape {
         self
             .overlay(content: {
                 RippleView(rippleViewModel: rippleViewModel, color: UIColor(color))
                     .clipShape(clipShape)
             })
     }
-    
-    public func addRippleTouchHandler(viewModel: RippleViewModel,
+}
+ 
+public extension View {
+    func addRippleTouchHandler(viewModel: RippleViewModel,
                                tapAction: (() -> Void)? = nil,
-                               longGestureAction: ((CGPoint, RippleViewGestureState) -> Void)? = nil
-    ) -> some View {
+                               longGestureAction: ((CGPoint, RippleViewGestureState) -> Void)? = nil) -> some View {
         self
             .onTouch(type: longGestureAction == nil ? .allWithoutLongGesture : .all,
                      perform: { location, event in
