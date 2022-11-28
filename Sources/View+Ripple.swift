@@ -9,12 +9,6 @@ import Foundation
 import SwiftUI
 import ViewOnTouch
 
-public enum RippleViewGestureState {
-    case started
-    case moved
-    case ended
-}
-
 extension View {
     public func addRipple<S>(color: Color, rippleViewModel: RippleViewModel, clipShape: S) -> some View where S : Shape {
         self
