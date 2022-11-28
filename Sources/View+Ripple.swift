@@ -14,7 +14,7 @@ public extension View {
         modifier(RippleViewModifier(color: color, viewModel: viewModel, clipShape: clipShape))
     }
     
-    @available(*, deprecated, renamed: "rippleEffect")
+    @available(iOS, introduced: 15.0, deprecated: 16.0, renamed: "rippleEffect")
     func addRipple<S>(color: Color, rippleViewModel: RippleViewModel, clipShape: S) -> some View where S : Shape {
         self
             .overlay(content: {
