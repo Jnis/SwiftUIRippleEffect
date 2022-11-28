@@ -9,15 +9,6 @@ import Foundation
 import SwiftUI
 import ViewOnTouch
 
-public class RippleViewModel: ObservableObject {
-    fileprivate var touchDown: ((_ touchPoint: CGPoint) -> Void)?
-    fileprivate var touchMove: ((_ touchPoint: CGPoint) -> Void)?
-    fileprivate var touchUp: ((_ touchPoint: CGPoint) -> Void)?
-    fileprivate var isTouchHandling = false
-    
-    public init() { }
-}
-
 public enum RippleViewGestureState {
     case started
     case moved
