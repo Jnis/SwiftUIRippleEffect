@@ -21,8 +21,8 @@ https://github.com/Jnis/SwiftUIRippleEffect.git
 # Usage
 
 1) Make a shared RippleViewModel
-2) Add touch handler by .addRippleTouchHandler method 
-3) Add ripple view by .addRipple method
+2) Add touch handler by .rippleTouchHandler method 
+3) Add ripple effect view by .rippleEffect method
 
 ``` swift
 import SwiftUIRippleEffect
@@ -38,15 +38,15 @@ var button1: some View {
                 Text("Title 1").padding()
                 Spacer()
             }
-            .addRippleTouchHandler(viewModel: rippleViewModel) // 2
+            .rippleTouchHandler(viewModel: rippleViewModel) // 2
         })
         .buttonStyle(EmptyStyle())
         .background(
             Capsule()
                 .foregroundColor(.yellow)
-                .addRipple(color: .gray,
-                           rippleViewModel: rippleViewModel,
-                           clipShape: Capsule()) // 3
+                .rippleEffect(color: .gray,
+                              rippleViewModel: rippleViewModel,
+                              clipShape: Capsule()) // 3
         )
     }.padding()
 }

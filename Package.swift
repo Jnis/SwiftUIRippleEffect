@@ -5,7 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "SwiftUIRippleEffect",
-    platforms: [.iOS(.v15)], //, .macOS(.v11), .tvOS(.v12), .watchOS(.v7)],
+    platforms: [.iOS(.v14)], //, .macOS(.v11), .tvOS(.v12), .watchOS(.v7)],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(

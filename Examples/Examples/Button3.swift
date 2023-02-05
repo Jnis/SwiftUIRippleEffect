@@ -25,9 +25,9 @@ extension Button3 {
                 uiModel.bgColor.cornerRadius(12)
                 
                 Color.clear
-                    .addRipple(color: uiModel.rippleColor,
-                               rippleViewModel: rippleViewModel,
-                               clipShape: RoundedRectangle(cornerRadius: 12))
+                    .rippleEffect(color: uiModel.rippleColor,
+                                  rippleViewModel: rippleViewModel,
+                                  clipShape: RoundedRectangle(cornerRadius: 12))
                 
                 VStack(spacing: 7) {
                     ZStack {
@@ -44,8 +44,8 @@ extension Button3 {
                     Text(uiModel.title)
                 }
             }
-            .addRippleTouchHandler(viewModel: rippleViewModel,
-                                   longGestureAction: longPressAction == nil ? nil : {_, state in
+            .rippleTouchHandler(viewModel: rippleViewModel,
+                                longGestureAction: longPressAction == nil ? nil : {_, state in
                 if state == .started {
                     longPressAction?()
                 }

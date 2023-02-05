@@ -24,9 +24,10 @@ extension Button2 {
                 .background(
                     Capsule()
                         .foregroundColor(.yellow)
-                        .addRipple(color: .blue,
-                                   rippleViewModel: rippleViewModel,
-                                   clipShape: Capsule())
+                        .rippleEffect(color: .blue,
+                                      fillPercent: 1,
+                                      rippleViewModel: rippleViewModel,
+                                      clipShape: Capsule())
                 )
         }
     }
@@ -47,7 +48,7 @@ struct Button2: View {
                 Text(uiModel.title).padding()
                 Spacer()
             }
-            .addRippleTouchHandler(viewModel: rippleViewModel)
+            .rippleTouchHandler(viewModel: rippleViewModel)
         })
         .buttonStyle(Button2.Style(uiModel: uiModel, rippleViewModel: rippleViewModel))
     }

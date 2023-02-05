@@ -57,15 +57,15 @@ struct ContentView: View {
                     Text("Title 1").padding()
                     Spacer()
                 }
-                .addRippleTouchHandler(viewModel: rippleViewModel) // 2
+                .rippleTouchHandler(viewModel: rippleViewModel) // 2
             })
             .buttonStyle(EmptyStyle())
             .background(
                 Capsule()
                     .foregroundColor(.yellow)
-                    .addRipple(color: .gray,
-                               rippleViewModel: rippleViewModel,
-                               clipShape: Capsule()) // 3
+                    .rippleEffect(color: .gray,
+                                  rippleViewModel: rippleViewModel,
+                                  clipShape: Capsule()) // 3
             )
         }.padding()
     }
