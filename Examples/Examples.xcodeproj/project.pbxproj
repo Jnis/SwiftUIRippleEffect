@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,9 +11,9 @@
 		09150C45292C101A00D20EDD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09150C44292C101A00D20EDD /* ContentView.swift */; };
 		09150C47292C101B00D20EDD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09150C46292C101B00D20EDD /* Assets.xcassets */; };
 		09150C4B292C101B00D20EDD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09150C4A292C101B00D20EDD /* Preview Assets.xcassets */; };
-		09150C53292C107700D20EDD /* SwiftUIRippleEffect in Frameworks */ = {isa = PBXBuildFile; productRef = 09150C52292C107700D20EDD /* SwiftUIRippleEffect */; };
 		09150C57292C10C200D20EDD /* Button2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09150C56292C10C200D20EDD /* Button2.swift */; };
 		091AC6BB292C1A4400991273 /* Button3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091AC6BA292C1A4400991273 /* Button3.swift */; };
+		094CA6012CC12C9800BAEDC3 /* SwiftUIRippleEffect in Frameworks */ = {isa = PBXBuildFile; productRef = 094CA6002CC12C9800BAEDC3 /* SwiftUIRippleEffect */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,7 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09150C53292C107700D20EDD /* SwiftUIRippleEffect in Frameworks */,
+				094CA6012CC12C9800BAEDC3 /* SwiftUIRippleEffect in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,7 +94,7 @@
 			);
 			name = Examples;
 			packageProductDependencies = (
-				09150C52292C107700D20EDD /* SwiftUIRippleEffect */,
+				094CA6002CC12C9800BAEDC3 /* SwiftUIRippleEffect */,
 			);
 			productName = Examples;
 			productReference = 09150C3F292C101A00D20EDD /* Examples.app */;
@@ -125,7 +125,7 @@
 			);
 			mainGroup = 09150C36292C101A00D20EDD;
 			packageReferences = (
-				09150C51292C107700D20EDD /* XCRemoteSwiftPackageReference "SwiftUIRippleEffect" */,
+				094CA5FF2CC12C9800BAEDC3 /* XCLocalSwiftPackageReference "../../@SwiftUIRipple" */,
 			);
 			productRefGroup = 09150C40292C101A00D20EDD /* Products */;
 			projectDirPath = "";
@@ -295,7 +295,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
@@ -331,7 +331,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
@@ -369,21 +369,16 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		09150C51292C107700D20EDD /* XCRemoteSwiftPackageReference "SwiftUIRippleEffect" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Jnis/SwiftUIRippleEffect.git";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
+/* Begin XCLocalSwiftPackageReference section */
+		094CA5FF2CC12C9800BAEDC3 /* XCLocalSwiftPackageReference "../../@SwiftUIRipple" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "../../@SwiftUIRipple";
 		};
-/* End XCRemoteSwiftPackageReference section */
+/* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		09150C52292C107700D20EDD /* SwiftUIRippleEffect */ = {
+		094CA6002CC12C9800BAEDC3 /* SwiftUIRippleEffect */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 09150C51292C107700D20EDD /* XCRemoteSwiftPackageReference "SwiftUIRippleEffect" */;
 			productName = SwiftUIRippleEffect;
 		};
 /* End XCSwiftPackageProductDependency section */

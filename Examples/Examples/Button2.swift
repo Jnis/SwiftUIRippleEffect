@@ -37,6 +37,7 @@ struct Button2: View {
     
     let uiModel: UIModel
     let action: () -> Void
+    @State private var rippleViewModel = RippleViewModel()
     
     var body: some View {
         let rippleViewModel = RippleViewModel()
@@ -48,9 +49,10 @@ struct Button2: View {
                 Text(uiModel.title).padding()
                 Spacer()
             }
-            .rippleTouchHandler(viewModel: rippleViewModel)
+            .rippleTouchHandler17AndOlder(viewModel: rippleViewModel)
         })
         .buttonStyle(Button2.Style(uiModel: uiModel, rippleViewModel: rippleViewModel))
+        .rippleTouchHandler(viewModel: rippleViewModel)
     }
 }
 

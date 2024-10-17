@@ -17,10 +17,9 @@ extension Button3 {
     
     struct Style: ButtonStyle {
         let uiModel: UIModel
-        let longPressAction: (() -> Void)?
+        let rippleViewModel: RippleViewModel
         
         func makeBody(configuration: Self.Configuration) -> some View {
-            let rippleViewModel = RippleViewModel()
             ZStack {
                 uiModel.bgColor.cornerRadius(12)
                 
@@ -44,34 +43,30 @@ extension Button3 {
                     Text(uiModel.title)
                 }
             }
-            .rippleTouchHandler(viewModel: rippleViewModel,
-                                longGestureAction: longPressAction == nil ? nil : {_, state in
-                if state == .started {
-                    longPressAction?()
-                }
-            })
             .frame(width: 120, height: 120)
+            .rippleTouchHandler17AndOlder(viewModel: rippleViewModel)
         }
     }
 }
 
 struct Button3: View {
+    @State private var rippleViewModel = RippleViewModel()
     let uiModel: UIModel
     let action: () -> Void
-    let longPressAction: (() -> Void)?
     
     var body: some View {
         Button(action: {
             action()
         }, label: {})
-        .buttonStyle(Button3.Style(uiModel: uiModel, longPressAction: longPressAction))
+        .buttonStyle(Button3.Style(uiModel: uiModel, rippleViewModel: rippleViewModel))
+        .rippleTouchHandler(viewModel: rippleViewModel)
     }
 }
 
 struct Button3_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
-            Button3(uiModel: .init(title: "Title"), action: {}, longPressAction: {})
+            Button3(uiModel: .init(title: "Title"), action: {})
                 .padding()
         }.background(.black)
     }

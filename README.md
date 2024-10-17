@@ -27,32 +27,41 @@ https://github.com/Jnis/SwiftUIRippleEffect.git
 ``` swift
 import SwiftUIRippleEffect
 
-var button1: some View {
-    VStack {
-        let rippleViewModel = RippleViewModel() // 1
-        Button(action: {
-            
-        }, label: {
-            HStack {
-                Spacer()
-                Text("Title 1").padding()
-                Spacer()
-            }
-            .rippleTouchHandler(viewModel: rippleViewModel) // 2
-        })
-        .buttonStyle(EmptyStyle())
-        .background(
-            Capsule()
-                .foregroundColor(.yellow)
-                .rippleEffect(color: .gray,
-                              rippleViewModel: rippleViewModel,
-                              clipShape: Capsule()) // 3
-        )
-    }.padding()
+struct MyButton<V: View>: View {
+    @State private var rippleViewModel = RippleViewModel() // 1
+    
+    let action: () -> Void
+    let label: () -> V
+    
+    var body: some View {
+        VStack {
+            Button(action: {
+                action()
+            }, label: {
+                label()
+                    .contentShape(Rectangle())
+                    .rippleTouchHandler17AndOlder(viewModel: rippleViewModel) // 2 (iOS17 and older)
+            })
+            .buttonStyle(EmptyStyle())
+            .rippleTouchHandler(viewModel: rippleViewModel) // 2 (iOS18)
+            .background(
+                Capsule()
+                    .foregroundColor(.yellow)
+                    .rippleEffect(color: .gray,
+                                  rippleViewModel: rippleViewModel,
+                                  clipShape: Capsule()) // 3
+            )
+        }
+    }
 }
 ```
 
 You can find more examples inside `/Examples` folder.
+
+## Notes
+- `.rippleTouchHandler` must not be inside Button's label
+- `.rippleTouchHandler` must be after `onTapGesture` and `onLongPressGesture`
+- use `.rippleTouchHandler17AndOlder` for old iOS versions.
 
 # License 
 MIT
